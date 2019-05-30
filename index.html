@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Letter Guess</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../PsychicGame/assets/css/style.css">
+        
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="row bg-light">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h1 class="text-center">Psychic Game</h1>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <div class="row bg-light pb-4">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 class="text-center">Guess what letter I'm thinking of...</h2>
+            </div>
+    </div>
+</header>
+<main>
+        <div class="container">
+            <div class="row bg-light">
+                <div class="col-md-3">
+                    <p class="text-danger" id="u-guessed"></p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-info text-center" id="letter-guessed"></h3>
+                </div>
+                <div class="col-md-3 p-0">
+                        <ul class="list-group list-group-horizontal-md p-0">
+                                <li class="list-group-item">Wins: &nbsp;<span id="win" class="badge badge-success badge-pill"></span></li>
+                                <li class="list-group-item">Losses: &nbsp;<span id="lose" class="badge badge-danger badge-pill"></span></li>
+                              </ul>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+<script src="../PsychicGame/assets/javascript/game.js"></script>
+</body>
+</html>
