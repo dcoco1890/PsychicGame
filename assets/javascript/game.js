@@ -52,6 +52,10 @@ document.onkeyup = function(event){
     attemptsLeft--;
     var userInput = event.key.toLowerCase();
 
+    document.getElementById('u-guessed').innerText = "You picked: "
+    userGuesses.push(userInput);
+    document.getElementById('letter-guessed').innerHTML = userGuesses;
+
     if (userInput === compLetter){
         document.getElementById('middleText').innerText = "You Win! But now I'm thinking of another letter...";
         
