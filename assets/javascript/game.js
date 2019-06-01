@@ -1,11 +1,17 @@
+var userGuesses = [];
+var isHidden = true;
+var attemptsLeft = 10;
+
 var wins = {
     score: 0,
 
     add: function() {
-        this.score = this.score + 1;
-        var el = document.getElementById('win');
-        el.innerText = this.score;
-        return this.score;
+        this.score += 1;      //increments score
+        var el = document.getElementById('win');   //grabs the win element
+        el.innerText = this.score;  //changes win element text to score
+        attemptsLeft = 10;          //reset the attempts after a win
+        document.getElementById('guesses-left').innerText = attemptsLeft;  //updates the guesses left on screen
+        return this.score; //returns the score
     }
 
 }
@@ -14,15 +20,15 @@ var loss = {
     score: 0,
 
     add: function(){
-        this.score = this.score + 1;
+        this.score += 1;
         var el = document.getElementById('lose');
         el.innerText = this.score;
+        attemptsLeft = 10; 
+        document.getElementById('guesses-left').innerText = attemptsLeft; 
         return this.score;
     }
 }
-var userGuesses = [];
-var isHidden = true;
-var attemptsLeft = 10;
+
 
 // This function resets the game, and creates a character for the user to try to guess
 function reset(){
@@ -31,8 +37,7 @@ function reset(){
     document.getElementById('letter-guessed').innerText = "";
     var compKey = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var x = Math.floor((Math.random() * 26));
-    var y = compKey[x];
-    attemptsLeft = 10;   
+    var y = compKey[x];   
     return y;
 
 }
@@ -69,7 +74,7 @@ document.onkeyup = function(event){
         if (userInput === compLetter){
 
             document.getElementById('middleText').innerText = "Alright, let's play again!";
-            document.getElementById('u-guessed').innerText = "Press any key to start guessing again! ";
+            document.getElementById('u-guessed').innerText = "Press any key to continue";
             wins.add();
             userGuesses = [];
             document.getElementById('letter-guessed').innerHTML = userGuesses;
