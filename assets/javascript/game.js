@@ -3,6 +3,8 @@ var wins = {
 
     add: function() {
         this.score = this.score + 1;
+        var el = document.getElementById('win');
+        el.innerText = this.score;
         return this.score;
     }
 
@@ -39,6 +41,7 @@ function reset(){
 
 
 
+
 //main
 
 
@@ -49,15 +52,23 @@ console.log(compLetter);
 
 document.onkeyup = function(event){
 
+    
     attemptsLeft--;
+    document.getElementById('guesses-left').innerText = attemptsLeft;
     var userInput = event.key.toLowerCase();
-
     document.getElementById('u-guessed').innerText = "You picked: "
+    
     userGuesses.push(userInput);
     document.getElementById('letter-guessed').innerHTML = userGuesses;
 
     if (userInput === compLetter){
-        document.getElementById('middleText').innerText = "You Win! But now I'm thinking of another letter...";
+        document.getElementById('middleText').innerText = "Alright, let's play again!";
+        document.getElementById('u-guessed').innerText = "Press any key to start guessing again! ";
+        wins.add();
+        userGuesses = [];
+        document.getElementById('letter-guessed').innerHTML = userGuesses;
+    }
+    else{
         
     }
 
