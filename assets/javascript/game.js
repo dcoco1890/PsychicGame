@@ -15,6 +15,8 @@ var loss = {
 
     add: function(){
         this.score = this.score + 1;
+        var el = document.getElementById('lose');
+        el.innerText = this.score;
         return this.score;
     }
 }
@@ -52,25 +54,37 @@ console.log(compLetter);
 
 document.onkeyup = function(event){
 
-    
-    attemptsLeft--;
-    document.getElementById('guesses-left').innerText = attemptsLeft;
-    var userInput = event.key.toLowerCase();
+    //creates a variable to grab userinput, and updates the section that says You picked
+    let userInput = event.key.toLowerCase();
     document.getElementById('u-guessed').innerText = "You picked: "
-    
-    userGuesses.push(userInput);
-    document.getElementById('letter-guessed').innerHTML = userGuesses;
 
-    if (userInput === compLetter){
-        document.getElementById('middleText').innerText = "Alright, let's play again!";
-        document.getElementById('u-guessed').innerText = "Press any key to start guessing again! ";
-        wins.add();
-        userGuesses = [];
-        document.getElementById('letter-guessed').innerHTML = userGuesses;
-    }
-    else{
+    //only run this code when there are attempts left. 
+    if (attemptsLeft > 0){
+
+        attemptsLeft--;         //decrement attempts counter
+        document.getElementById('guesses-left').innerText = attemptsLeft;   //changes the text of attempts left
+        userGuesses.push(userInput);         //adds user choices into array
+        document.getElementById('letter-guessed').innerHTML = userGuesses; //puts the array on the screen
+
+        if (userInput === compLetter){
+
+            document.getElementById('middleText').innerText = "Alright, let's play again!";
+            document.getElementById('u-guessed').innerText = "Press any key to start guessing again! ";
+            wins.add();
+            userGuesses = [];
+            document.getElementById('letter-guessed').innerHTML = userGuesses;
+        }
         
+
     }
+    else {
+        loss.add();
+    }
+
+    
+
+   
+   
 
 
 
