@@ -10,8 +10,8 @@
 
 <body>
 <header>
-    <div class="container">
-        <div class="row bg-light">
+    <div class="jumbotron p-1">
+        <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <h1 class="text-center display-4">Psychic Game</h1>
@@ -19,7 +19,7 @@
             <div class="col-md-3"></div>
         </div>
 
-        <div class="row bg-light pb-4">
+        <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <h3 id="middleText" class="text-center">Guess what letter I'm thinking of...</h3>
@@ -30,15 +30,15 @@
         <div class="container">
             <div class="row bg-light">
                 <div class="col-md-3">
-                    <p class="text-danger text-right" id="u-guessed"></p>
+                    <h4 class="text-danger text-right" id="u-guessed"></h4>
                 </div>
                 <div class="col-md-6">
                     <h3 class="text-info text-center" id="letter-guessed"></h3>
                 </div>
                 <div class="col-md-3 p-0">
-                        <ul class="list-group list-group-horizontal-md p-0">
-                                <li class="list-group-item">Wins: &nbsp;<span id="win" class="badge badge-success badge-pill"></span></li>
-                                <li class="list-group-item">Losses: &nbsp;<span id="lose" class="badge badge-danger badge-pill"></span></li>
+                        <ul class="list-group list-group-horizontal-md">
+                                <li class="list-group-item"><h4>Wins: &nbsp;<span id="win" class="badge badge-success badge-secondary"></span></h4></li>
+                                <li class="list-group-item"><h4>Losses: &nbsp;<span id="lose" class="badge badge-danger badge-secondary"></span></h4></li>
                               </ul>
                 </div>
             </div>
@@ -52,11 +52,11 @@
             <div class="jumbotron">
                 <div class="row">
                     <div class="col-md-9">
-                    <h1 class="display-4 pb-2 float-left">Guesses Left</h1>
+                    <h1 class="display-4 pb-2 float-left">Guesses Left :</h1>
                     
                     </div>
                     <div class="col-md-3">
-                    <h1 class="display-4" id="guesses-left">10</h1>
+                    <h1 class="display-4 text-center" id="guesses-left">10</h1>
                     </div>
                 </div>
             </div>
